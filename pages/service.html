@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-neutral-950">
+    <style>
+        #check:checked~nav {
+            height: 280px;
+        }
+
+        #check:checked~label>span:nth-child(2) {
+            opacity: 0;
+        }
+
+        #check:checked~label>span:first-child {
+            transform: rotate(40deg) translateY(8px) translateX(6px);
+            width: 70%;
+        }
+
+        #check:checked~label>span:last-child {
+            transform: rotate(-40deg) translateY(-10px) translateX(6px);
+            width: 70%;
+        }
+
+        body {
+            user-select: none;
+        }
+
+        @keyframes showtext1 {
+            from {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+
+        @keyframes showhearder {
+            from {
+                opacity: 0;
+                transform: translateY(-100px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+
+        @font-face {
+            font-family: 'MyCustomFont';
+            src: url('fonts/PlayfairDisplay-Black.otf') format('woff2'),
+                url('fonts/PlayfairDisplay-BlackItalic.otf') format('woff'),
+                url('fonts/PlayfairDisplay-Bold.otf') format('truetype'),
+                url('fonts/PlayfairDisplay-BoldItalic.otf') format('truetype'),
+                url('fonts/PlayfairDisplay-Italic.otf') format('truetype'),
+                url('fonts/PlayfairDisplay-Regular.otf') format('truetype'),
+                url('fonts/PlayfairDisplaySC-Black.otf') format('truetype'),
+                url('fonts/PlayfairDisplaySC-BlackItalic.otf') format('truetype'),
+                url('fonts/PlayfairDisplaySC-Bold.otf') format('truetype'),
+                url('fonts/PlayfairDisplaySC-BoldItalic.otf') format('truetype'),
+                url('fonts/PlayfairDisplaySC-Italic.otf') format('truetype'),
+                url('fonts/PlayfairDisplaySC-Regular.otf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        p {
+            font-weight: 100;
+        }
+
+        h1 {
+            font-family: "Archivo Black", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+
+<header
+class="w-full py-5 px-[30px] h-[100px] relative sticky top-0 z-50 flex justify-between transition-all  opacity-0 animate-[showhearder_1s_ease-in-out_forwards] items-center bg-neutral-900 shadow-xl shadow-black ">
+<div class="flex justify-start items-center gap-5 max-xl:justify-between max-xl:w-full">
+    <div class="logo">
+        <a href="../index.html" class="text-white uppercase text-3xl font-black ">arman</a>
+    </div>
+    <input type="checkbox" id="check" class="hidden">
+    <label for="check"
+        class="w-[50px] h-[50px] bg-orange-500 hidden max-xl:flex flex justify-center flex-col items-center text-[30px] gap-2 text-white">
+        <span class="w-[60%] h-[3px] bg-white transition-all"></span>
+        <span class="w-[60%] h-[3px] bg-white transition-all"></span>
+        <span class="w-[60%] h-[3px] bg-white transition-all"></span>
+    </label>
+    <nav
+        class="max-xl:absolute max-xl:top-full max-xl:right-0 max-xl:bg-neutral-900 transition-all max-xl:w-[400px] max-md:w-full max-xl:shadow-xl max-xl:shadow-black max-xl:overflow-hidden max-xl:h-0">
+        <ul class="flex justify-content-center items-center gap-4 max-xl:flex-col">
+            <li class="rounded-[30px] w-[150px] overflow-hidden"><a href="./projects.html"
+                    class=" block w-full text-center py-3 px-5 uppercase transition-all hover:bg-orange-500 text-white tracking-widest">projects</a>
+            </li>
+            <li class="rounded-[30px] w-[150px] overflow-hidden"><a href="./work.html"
+                    class=" block w-full text-center py-3 px-5 uppercase transition-all hover:bg-orange-500 text-white tracking-widest">work</a>
+            </li>
+                <a href=""
+                    class="border-3 w-[230px] transition-all hidden max-xl:flex flex justify-between items-center gap-3 hover:bg-green-700 border-green-700 text-white p-[1px_10px_1px_1px] text-xl rounded-full"><i
+                        class="fa-solid fa-phone p-3 text-center rounded-full flex justify-center items-center bg-green-700"></i>
+                    +374 77 30 29 62</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="flex gap-3">
+        <button class="lang-btn text-white uppercase" data-lang="en">EN</button>
+        <button class="lang-btn text-white uppercase" data-lang="ru">RU</button>
+        <button class="lang-btn text-white uppercase" data-lang="hy">HY</button>
+    </div>
+</div>
+<a href=""
+    class="border-3 w-[230px] transition-all flex justify-between items-center gap-3 hover:bg-green-700 border-green-700 text-white p-[1px_10px_1px_1px] text-[20px] rounded-full max-xl:hidden "><i
+        class="fa-solid fa-phone p-3 text-center rounded-full flex justify-center items-center bg-green-700"></i>
+    +374 77 30 29 62</a>
+</header>
+    <h1
+        class="text-white opacity-0 drop-shadow-[5px_5px_0px_#585858] max-xl:text-[90px] max-md:text-[70px]  animate-[showtext1_1s_ease-in-out_forwards] font-black  text-center text-[180px] uppercase ">
+        services
+    </h1>
+    <div class="w-full flex justify-center items-center gap-5 flex-wrap">
+        <div
+            class="w-[400px] h-auto flex justify-center items-center flex-col gap-5 p-5 border-3 border-neutral-900 shadow-xl shadow-black rounded-lg">
+            <h1 class="text-3xl drop-shadow-[5px_5px_0px_#585858] text-white font-semibold">Basic Website</h1>
+            <p class="text-center text-2xl text-gray-300">Single-page website + 4 additional pages</p>
+            <ul class="list-disc text-gray-600">
+                <li class="text-2xl text-orange-300">HTML</li>
+                <li class="text-2xl text-orange-300">CSS</li>
+                <li class="text-2xl text-orange-300">Tailwind CSS</li>
+            </ul>
+            <span class="text-lg font-bold text-green-600">$800</span>
+        </div>
+
+        <div
+            class="w-[400px] h-auto flex justify-center items-center flex-col gap-5 p-5 border-3 border-neutral-900 shadow-xl shadow-black rounded-lg">
+            <h1 class="text-3xl text-white drop-shadow-[5px_5px_0px_#585858] text-white font-semibold">Advanced Website
+            </h1>
+            <p class="text-center text-2xl text-gray-300">Website with 8 pages</p>
+            <ul class="list-disc  text-gray-600">
+                <li class="text-2xl text-orange-300">CSS</li>
+                <li class="text-2xl text-orange-300">HTML</li>
+                <li class="text-2xl text-orange-300">JavaScript</li>
+                <li class="text-2xl text-orange-300">Responsive Design</li>
+            </ul>
+            <span class="text-lg font-bold text-green-600">$1500</span>
+        </div>
+
+        <div
+            class="w-[400px] h-auto flex justify-center items-center flex-col gap-5 p-5 border-3 border-neutral-900 shadow-xl shadow-black rounded-lg">
+            <h1 class="text-3xl text-white drop-shadow-[5px_5px_0px_#585858] text-white font-semibold">Premium Website
+            </h1>
+            <p class="text-center text-2xl text-gray-300">Website with 8+ pages, SEO, and animations</p>
+            <ul class="list-disc text-gray-600">
+                <li class="text-2xl text-orange-300">HTML / CSS / JS</li>
+                <li class="text-2xl text-orange-300">Tailwind CSS</li>
+                <li class="text-2xl text-orange-300">React Js</li>
+                <li class="text-2xl text-orange-300">SEO Optimization</li>
+                <li class="text-2xl text-orange-300">Animations</li>
+            </ul>
+            <span class="text-lg font-bold text-green-600">$3500</span>
+        </div>
+        <div
+            class="w-[400px] h-auto flex justify-center items-center flex-col gap-5 p-5 border-3 border-neutral-900 shadow-xl shadow-black rounded-lg">
+            <h1 class="text-3xl text-white drop-shadow-[5px_5px_0px_#585858] text-white font-semibold">Premium Website
+            </h1>
+            <p class="text-center text-2xl text-gray-300">Website with 8+ pages, SEO, and animations, and Back-End</p>
+            <ul class="list-disc text-gray-600">
+                <li class="text-2xl text-orange-300">HTML / CSS / JS</li>
+                <li class="text-2xl text-orange-300">Tailwind CSS</li>
+                <li class="text-2xl text-orange-300">SEO Optimization</li>
+                <li class="text-2xl text-orange-300">Animations</li>
+                <li class="text-2xl text-orange-300">Back-End PHP / MySql</li>
+            </ul>
+            <span class="text-lg font-bold text-green-600">$5500</span>
+        </div>
+        <script>
+            const translations = {
+                en: {
+                    projects: "Projects",
+                    work: "Work"
+                },
+                ru: {
+                    projects: "Проекты",
+                    work: "Работа"
+                },
+                hy: {
+                    projects: "Նախագծեր",
+                    work: "Աշխատանք"
+                }
+            };
+        
+            const langButtons = document.querySelectorAll(".lang-btn");
+            const navLinks = document.querySelectorAll(".nav-link");
+        
+            langButtons.forEach(button => {
+                button.addEventListener("click", () => {
+                    const selectedLang = button.getAttribute("data-lang");
+                    navLinks.forEach(link => {
+                        const key = link.getAttribute("data-lang");
+                        link.textContent = translations[selectedLang][key];
+                    });
+                });
+            });
+        </script>
+</body>
+
+</html>

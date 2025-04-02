@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-neutral-950">
+    <style>
+        @layer utilities {
+            @media (max-width: 1024px) {
+                .max-lg\:before-text-15px::before {
+                    font-size: 15px;
+                }
+            }
+        }
+
+        #check:checked~nav {
+            height: 280px;
+        }
+
+        #check:checked~label>span:nth-child(2) {
+            opacity: 0;
+        }
+
+        #check:checked~label>span:first-child {
+            transform: rotate(40deg) translateY(8px) translateX(6px);
+            width: 70%;
+        }
+
+        #check:checked~label>span:last-child {
+            transform: rotate(-40deg) translateY(-10px) translateX(6px);
+            width: 70%;
+        }
+
+        body {
+            user-select: none;
+        }
+
+        @font-face {
+            font-family: 'MyCustomFont';
+            src: url('fonts/PlayfairDisplay-Black.otf') format('woff2'),
+                url('fonts/PlayfairDisplay-BlackItalic.otf') format('woff'),
+                url('fonts/PlayfairDisplay-Bold.otf') format('truetype'),
+                url('fonts/PlayfairDisplay-BoldItalic.otf') format('truetype'),
+                url('fonts/PlayfairDisplay-Italic.otf') format('truetype'),
+                url('fonts/PlayfairDisplay-Regular.otf') format('truetype'),
+                url('fonts/PlayfairDisplaySC-Black.otf') format('truetype'),
+                url('fonts/PlayfairDisplaySC-BlackItalic.otf') format('truetype'),
+                url('fonts/PlayfairDisplaySC-Bold.otf') format('truetype'),
+                url('fonts/PlayfairDisplaySC-BoldItalic.otf') format('truetype'),
+                url('fonts/PlayfairDisplaySC-Italic.otf') format('truetype'),
+                url('fonts/PlayfairDisplaySC-Regular.otf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        p {
+            font-weight: 100;
+        }
+
+        h1 {
+            font-family: "Archivo Black", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .mainimg {
+            animation: showimg 1s ease forwards;
+            animation-delay: 0.3s;
+        }
+
+        @keyframes showimg {
+            from {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+
+        @keyframes showtext1 {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+
+        @keyframes showtext2 {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+
+        .about::before {
+            width: 800px;
+            height: 800px;
+            border-radius: 50%;
+            border: 5px solid rgb(48, 48, 48);
+            box-shadow: 0 0 200px rgba(63, 63, 63, 0.205);
+            content: "";
+            filter: blur(7px);
+            position: absolute;
+            z-index: 0;
+            scale: 0;
+            opacity: 0;
+            rotate: -180deg;
+            animation: show2 1s ease forwards;
+            animation-delay: 0.3s;
+        }
+
+        @media(max-width:552px) {
+            .about::before {
+                width: 500px;
+                height: 500px;
+            }
+        }
+
+        @keyframes showhearder {
+            from {
+                opacity: 0;
+                transform: translateY(-100px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+
+        @keyframes show {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(00px);
+            }
+        }
+
+        @keyframes show2 {
+            from {
+                opacity: 0;
+                scale: 0;
+                rotate: -230deg;
+            }
+
+            to {
+                opacity: 1;
+                scale: 1;
+                rotate: 0deg;
+            }
+        }
+
+        .about::after {
+            width: 600px;
+            height: 600px;
+            border: 5px solid rgb(48, 48, 48);
+            border-radius: 50%;
+            box-shadow: 0 0 200px rgba(114, 114, 114, 0.205);
+            filter: blur(7px);
+            content: '';
+            position: absolute;
+            z-index: 0;
+            opacity: 0;
+            scale: 0;
+            animation: show3 1s ease-in-out forwards;
+            animation-delay: .150s;
+        }
+
+        @media(max-width:552px) {
+            .about::after {
+                width: 350px;
+                height: 350px;
+            }
+        }
+
+        @keyframes show3 {
+            from {
+                opacity: 0;
+                scale: 0;
+            }
+
+            to {
+                opacity: 1;
+                scale: 1;
+            }
+        }
+    </style>
+    <header
+        class="w-full py-5 px-[30px] h-[100px] relative sticky top-0 z-50 flex justify-between transition-all  opacity-0 animate-[showhearder_1s_ease-in-out_forwards] items-center bg-neutral-900 shadow-xl shadow-black ">
+        <div class="flex justify-start items-center gap-5 max-xl:justify-between max-xl:w-full">
+            <div class="logo">
+                <a href="" class="text-white uppercase text-3xl font-black ">arman</a>
+            </div>
+            <input type="checkbox" id="check" class="hidden">
+            <label for="check"
+                class="w-[50px] h-[50px] bg-orange-500 hidden max-xl:flex flex justify-center flex-col items-center text-[30px] gap-2 text-white">
+                <span class="w-[60%] h-[3px] bg-white transition-all"></span>
+                <span class="w-[60%] h-[3px] bg-white transition-all"></span>
+                <span class="w-[60%] h-[3px] bg-white transition-all"></span>
+            </label>
+            <nav
+                class="max-xl:absolute max-xl:top-full max-xl:right-0 max-xl:bg-neutral-900 transition-all max-xl:w-[400px] max-md:w-full max-xl:shadow-xl max-xl:shadow-black max-xl:overflow-hidden max-xl:h-0">
+                <ul class="flex justify-content-center items-center gap-4 max-xl:flex-col">
+                    <li class="rounded-[30px] w-[150px] max-md:w-auto overflow-hidden"><a href="./pages/projects.html"
+                            class=" block w-full text-center py-3 px-5 uppercase transition-all hover:bg-orange-500 text-white tracking-widest"
+                            id="projects">projects</a>
+                    </li>
+                    <li class="rounded-[30px] w-[150px] max-md:w-auto overflow-hidden"><a href="./pages/work.html"
+                            class=" block w-full text-center py-3 px-5 uppercase transition-all hover:bg-orange-500 text-white tracking-widest"
+                            id="work">work</a>
+                    </li>
+                    <li class="rounded-[30px] w-[150px] max-md:w-auto overflow-hidden"><a href="./pages/service.html"
+                            class=" block w-full text-center py-3 px-5 uppercase transition-all hover:bg-orange-500 text-white tracking-widest"
+                            id="services">services
+                        </a></li>
+                    <li>
+                        <a href=""
+                            class="border-3 w-[230px] transition-all hidden max-xl:flex flex justify-between items-center gap-3 hover:bg-green-700 border-green-700 text-white p-[1px_10px_1px_1px] text-xl rounded-full"><i
+                                class="fa-solid fa-phone p-3 text-center rounded-full flex justify-center items-center bg-green-700"></i>
+                            +374 77 30 29 62</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <a href=""
+            class="border-3 w-[230px] transition-all flex justify-between items-center gap-3 hover:bg-green-700 border-green-700 text-white p-[1px_10px_1px_1px] text-[20px] rounded-full max-xl:hidden "><i
+                class="fa-solid fa-phone p-3 text-center rounded-full flex justify-center items-center bg-green-700"></i>
+            +374 77 30 29 62</a>
+    </header>
+
+    <div class="about flex justify-evenly relative items-center w-full pt-[100px] overflow-hidden">
+        <h1
+            class="text-white opacity-0 drop-shadow-[5px_5px_0px_#585858] max-md:hidden max-md:absolute max-lg:text-[30px] max-2xl:text-[45px] animate-[showtext1_1s_ease-in-out_forwards] font-black text-[70px] uppercase -translate-y-[200px] translate-x-[60px] ">
+            Arman
+            Mnacakanov
+        </h1>
+        <img class="mainimg opacity-0 relative z-10 w-[750px] max-2xl:w-[450px] rounded-full object-fit-cover grayscale-[100%] -translate-y-[100px]"
+            src="./assets/1728031188679.png" alt="">
+        <h1
+            class="text-white opacity-0 font-black animate-[showtext2_1s_ease-in-out_forwards] max-md:text-[20px] uppercase text-[70px] max-2xl:text-[30px] max-2xl:-translate-y-[50px] max-2xl:translate-x-[0px] max-md:hidden translate-x-[50px]">
+            <span class="bg-orange-500 p-2">Full-Stack</span>
+            <span class="drop-shadow-[5px_5px_0px_#585858]"> developer</span>
+        </h1>
+    </div>
+    <div
+        class="banner -translate-y-[300px] max-md:hidden z-20 h-[400px] max-md:h-[300px] animate-[show_1s_ease-in-out_forwards] overflow-hidden px-0 flex flex-col justify-center items-center
+         before:flex before:items-center text-center gap-1 relative before:absolute before:top-[200px] before:italic before:rotate-[7deg] before:shadow-black before:shadow-xl  before:-left-[40px] before:w-[170%] before:content-['HTML___CSS___JAVASCRIPT___JS__OOP___JQUERY___AJAX___REACT__JS__TYPESCRIPT___PHP___MYSQL___HTML___CSS___JAVASCRIPT___JS__OOP___JQUERY___AJAX___REACT_JS__TYPESCRIPT___PHP___MYSQL___HTML___CSS___JAVASCRIPT___JS__OOP___JQUERY___AJAX___L'] before:text-start before:text-3xl max-lg:before:text-[18px] max-lg:before:top-[130px] max-lg:after:text-[18px] before:text-gray-700 before:h-[100px] before:bg-black before:-z-10
+         after:absolute after:top-[60px] after:rotate-[-5deg] after:shadow-black after:shadow-xl  after:-left-[40px] after:w-[170%] after:h-[100px] after:bg-black after:-z-5  after:content-['HTML___CSS___JAVASCRIPT___JS__OOP___JQUERY___AJAX___REACT__JS___PHP___MYSQL___HTML___CSS___JAVASCRIPT___JS__OOP___JQUERY___AJAX___REACT_JS__TYPESCRIPT__PHP___MYSQL___HTML___CSS___JAVASCRIPT___JS__OOP___'] after:flex after:items-center after:text-start after:text-3xl after:text-gray-700 after:italic">
+        <!-- <h3 class="text-orange-500 text-5xl -translate-y-[40px]">Hi i'm Arman -->
+        </h3>
+        <!-- <h1 class="text-white font-black text-[150px] drop-shadow-[5px_5px_0px_#ff6900] animate-bounce">Full-Stack
+        developer</h1> -->
+    </div>
+    <div
+        class="flex justify-evenly items-center w-full max-xl:flex-col max-xl:gap-[100px]  -translate-y-[300px] max-md:-translate-y-[0]">
+        <div class=" w-[700px] max-2xl:w-[500px] max-lg:w-[80%] max-xl:w-[700px] max-2xl:before:w-[300px] max-xl:before:hidden max-2xl:before:h-[200px] max-2xl:after:h-[200px] max-xl:after:hidden  max-2xl:after:w-[300px] relative before:w-[350px] before:h-[200px] before:absolute before:-left-[100px] before:z-[3]
+        before:-top-[150px] before:bg-[url(./assets/1743404656816.jpg)] before:grayscale-[80%] before:rounded-3xl before:bg-cover before:bg-center
+        
+        after:w-[350px] after:h-[200px] after:absolute after:-right-[100px]  after:z-[3]
+        after:top-[80%] after:bg-[url(./assets/1743404656822.jpg)] after:grayscale-[80%] after:rounded-3xl after:bg-cover after:bg-center
+        ">
+            <img src="./assets/1743344141766.jpg" alt=""
+                class="w-full object-cover grayscale-[10%] shadow-2xl shadow-black rounded-2xl">
+        </div>
+
+        <div class=" w-[700px] flex flex-col items-start gap-5 max-md:w-[80%]">
+            <h1 class="text-white text-6xl drop-shadow-[5px_5px_0px_#585858]" id="about_me">About Me</h1>
+            <p class="text-white text-3xl max-md:text:[20px]" id="description">Passionate about crafting powerful,
+                scalable, and elegant
+                web solutions.
+                From front-end aesthetics to back-end logic, I build seamless digital experiences
+                that engage, perform, and inspire. As a programming instructor, I don’t just teach code—I ignite
+                curiosity, foster problem-solving, and empower the next generation of developers to turn ideas into
+                reality.</p>
+
+            <ul class="flex justify-center items-center gap-2">
+                <li
+                    class="overflow-hidden w-[50px] h-[50px] rounded-full border-3 border-orange-500 transition-all hover:bg-orange-500 hover:text-black">
+                    <a href=""
+                        class="flex w-full h-full justify-center items-center text-decoration-none text-3xl text-white"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                </li>
+                <li
+                    class="overflow-hidden w-[50px] h-[50px] rounded-full border-3 border-orange-500 transition-all hover:bg-orange-500 hover:text-black">
+                    <a href=""
+                        class="flex w-full h-full justify-center items-center text-decoration-none text-3xl text-white"><i
+                            class="fa-brands fa-instagram"></i></a>
+                </li>
+                <li
+                    class="overflow-hidden w-[50px] h-[50px] rounded-full border-3 border-orange-500 transition-all hover:bg-orange-500 hover:text-black">
+                    <a href=""
+                        class="flex w-full h-full justify-center items-center text-decoration-none text-3xl text-white"><i
+                            class="fa-brands fa-viber"></i></a>
+                </li>
+                <li
+                    class="overflow-hidden w-[50px] h-[50px] rounded-full border-3 border-orange-500 transition-all hover:bg-orange-500 hover:text-black">
+                    <a href=""
+                        class="flex w-full h-full justify-center items-center text-decoration-none text-3xl text-white"><i
+                            class="fa-brands fa-whatsapp"></i></a>
+                </li>
+                <li
+                    class="overflow-hidden w-[50px] h-[50px] rounded-full border-3 border-orange-500 transition-all hover:bg-orange-500 hover:text-black">
+                    <a href=""
+                        class="flex w-full h-full justify-center items-center text-decoration-none text-3xl text-white"><i
+                            class="fa-brands fa-telegram"></i></a>
+                </li>
+                <li
+                    class="overflow-hidden w-[50px] h-[50px] rounded-full border-3 border-orange-500 transition-all hover:bg-orange-500 hover:text-black">
+                    <a href=""
+                        class="flex w-full h-full justify-center items-center text-decoration-none text-3xl text-white"><i
+                            class="fa-solid fa-envelope"></i></a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="w-full h-auto flex justify-center items-center flex-col gap-5 py-[50px]  px-[100px] max-lg:px-[20px]">
+        <h1 class="text-white text-6xl drop-shadow-[5px_5px_0px_#585858] uppercase">skills</h1>
+        <ul class="flex justify-center items-center flex-wrap gap-4">
+            <li class="overflow-hidden rounded-xl shadow-xl shadow-black w-[300px] aspect-[16/8] max-lg:w-[400px]">
+                <img class="w-full h-full object-cover grayscale-[80%]"
+                    src="https://miro.medium.com/v2/resize:fit:1200/1*zw0EB1p-UafnISHVGZH2yg.png" alt="">
+            </li>
+            <li class="overflow-hidden rounded-xl shadow-xl shadow-black w-[300px] aspect-[16/8] max-lg:w-[400px]">
+                <img class="w-full h-full object-cover grayscale-[80%]"
+                    src="https://th.bing.com/th/id/R.c96494e1f97d69bce28409d39091e35d?rik=Zj0Krcny2c09QQ&pid=ImgRaw&r=0"
+                    alt="">
+            </li>
+            <li class="overflow-hidden rounded-xl shadow-xl shadow-black w-[300px] aspect-[16/8] max-lg:w-[400px]">
+                <img class="w-full h-full object-cover grayscale-[80%]"
+                    src="https://cdn-images-1.medium.com/max/1200/1*6INVhQxLdce1DRriJTHQfg.png" alt="">
+            </li>
+            <li class="overflow-hidden rounded-xl shadow-xl shadow-black w-[300px] aspect-[16/8] max-lg:w-[400px]">
+                <img class="w-full h-full object-cover grayscale-[80%]"
+                    src="https://git.ir/media/uploads/2023/07/28/tailwind-css-online-courses.jpg" alt="">
+            </li>
+            <li class="overflow-hidden rounded-xl shadow-xl shadow-black w-[300px] aspect-[16/8] max-lg:w-[400px]">
+                <img class="w-full h-full object-cover grayscale-[80%]"
+                    src="https://shapebootstrap.net/wp-content/uploads/2023/11/image-8-1024x512-1.jpg" alt="">
+            </li>
+            <li class="overflow-hidden rounded-xl shadow-xl shadow-black w-[300px] aspect-[16/8] max-lg:w-[400px]">
+                <img class="w-full h-full object-cover grayscale-[80]"
+                    src="https://th.bing.com/th/id/OIP.gs62Cl8RCIA7G07woMjAXQHaEP?rs=1&pid=ImgDetMain" alt="">
+            </li>
+            <li class="overflow-hidden rounded-xl shadow-xl shadow-black w-[300px] aspect-[16/8] max-lg:w-[400px]">
+                <img class="w-full h-full object-cover grayscale-[80]"
+                    src="https://miro.medium.com/max/1250/1*XlnVJQ392USdQuQcdyvJ4w.png" alt="">
+            </li>
+            <li class="overflow-hidden rounded-xl shadow-xl shadow-black w-[300px] aspect-[16/8] max-lg:w-[400px]">
+                <img class="w-full h-full object-cover grayscale-[80]"
+                    src="https://i.pinimg.com/474x/b5/1c/d9/b51cd9e0423f0dfa121ca7be446a29c9.jpg" alt="">
+            </li>
+            <li class="overflow-hidden rounded-xl shadow-xl  shadow-black w-[300px] aspect-[16/8] max-lg:w-[400px]">
+                <img class="w-full h-full object-cover grayscale-[80%]"
+                    src="https://logowik.com/content/uploads/images/ajax2010.jpg" alt="">
+            </li>
+            <li class="overflow-hidden rounded-xl shadow-xl  shadow-black w-[300px] aspect-[16/8] max-lg:w-[400px]">
+                <img class="w-full h-full object-cover grayscale-[80%]"
+                    src="https://www.duniailkom.com/wp-content/uploads/2022/01/React-logo-Duniailkom-730x430.jpg"
+                    alt="">
+            </li>
+            <li class="overflow-hidden rounded-xl shadow-xl  shadow-black w-[300px] aspect-[16/8] max-lg:w-[400px]">
+                <img class="w-full h-full object-cover grayscale-[80%]"
+                    src="https://velog.velcdn.com/images/doeunnkimm_/post/799908fe-ccb4-429c-b97a-08e3434836c7/image.png"
+                    alt="">
+            </li>
+            <li class="overflow-hidden rounded-xl shadow-xl  shadow-black w-[300px] aspect-[16/8] max-lg:w-[400px]">
+                <img class="w-full h-full object-cover grayscale-[80%]"
+                    src="https://miracomosehace.com/wp-content/uploads/2020/08/que-es-php.jpg" alt="">
+            </li>
+            <li class="overflow-hidden rounded-xl shadow-xl  shadow-black w-[300px] aspect-[16/8] max-lg:w-[400px]">
+                <img class="w-full h-full object-cover grayscale-[80%]"
+                    src="https://ahmedshaltout.com/wp-content/uploads/2023/08/php-oop.jpg" alt="">
+            </li>
+            <li class="overflow-hidden rounded-xl shadow-xl  shadow-black w-[300px] aspect-[16/8] max-lg:w-[400px]">
+                <img class="w-full h-full object-cover grayscale-[80%]"
+                    src="https://visualmodo.com/wp-content/uploads/2019/12/MySQL-A-Comprehensive-Explanation.png"
+                    alt="">
+            </li>
+            <li class="overflow-hidden rounded-xl shadow-xl  shadow-black w-[300px] aspect-[16/8] max-lg:w-[400px]">
+                <img class="w-full h-full object-cover grayscale-[80%]"
+                    src="https://miro.medium.com/v2/resize:fit:1024/1*au5PrqcnsUsvcqZiYYOx1g.jpeg" alt="">
+            </li>
+            <li class="overflow-hidden rounded-xl shadow-xl  shadow-black w-[300px] aspect-[16/8] max-lg:w-[400px]">
+                <img class="w-full h-full object-cover grayscale-[80%]"
+                    src="https://th.bing.com/th/id/OIP.J1f5TqJ1Hb3f108Pvdy8qgHaFj?rs=1&pid=ImgDetMain" alt="">
+            </li>
+        </ul>
+    </div>
+
+    <div class="flex justify-evenly items-center text-2xl py-[40px] max-xl:flex-col-reverse  max-lg:gap-[40px]">
+        <div class="w-[850px] flex justify-start items-start flex-col gap-4 max-xl:w-full max-xl:px-[40px]">
+            <h1 class="text-white"> I'm <span class="text-5xl drop-shadow-[5px_5px_0px_#585858]">Arman</span> – a
+                developer who turns code into art.</h1>
+            <p class="text-white">I create interactive, responsive, and user-friendly web applications that don’t just
+                work—they impress.
+                My projects are a perfect balance of aesthetics and functionality, where every line of code is written
+                with attention to detail.</p>
+
+            <ul class="flex justify-center items-start flex-col gap-3">
+                <li>
+                    <h1 class="text-white text-3xl drop-shadow-[5px_5px_0px_#585858]">What can I do?</h1>
+                </li>
+                <li class="text-orange-300">🚀 Build websites and web applications—from concept to final touch.</li>
+                <li class="text-orange-300">🎨 Craft UI/UX designs that make interfaces intuitive and user-friendly.
+                </li>
+                <li class="text-orange-300">⚡ Optimize performance—speed and smooth functionality are my priorities.
+                </li>
+            </ul>
+            <p class="text-white">
+                My work is the result of a passion for coding, a drive for perfection, and a mission to make the
+                internet a better place.
+            </p>
+            <p class="text-white">
+                Ready to create something awesome together? Let’s connect!
+            </p>
+        </div>
+
+        <img class="w-[700px] max-xl:w-[60%] object-cover rounded-full bg-neutral-900 shadow-[10px_10px_0_#585858]"
+            src="https://armanmnacakanov.github.io/My-CV-Page/assets/img/1.png" alt="">
+    </div>
+</body>
+
+</html>

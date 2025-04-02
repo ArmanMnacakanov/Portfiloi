@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-neutral-950">
+
+    <style>
+        body {
+            user-select: none;
+        }
+
+        @font-face {
+            font-family: 'MyCustomFont';
+            src: url('fonts/PlayfairDisplay-Black.otf') format('woff2'),
+                url('fonts/PlayfairDisplay-BlackItalic.otf') format('woff'),
+                url('fonts/PlayfairDisplay-Bold.otf') format('truetype'),
+                url('fonts/PlayfairDisplay-BoldItalic.otf') format('truetype'),
+                url('fonts/PlayfairDisplay-Italic.otf') format('truetype'),
+                url('fonts/PlayfairDisplay-Regular.otf') format('truetype'),
+                url('fonts/PlayfairDisplaySC-Black.otf') format('truetype'),
+                url('fonts/PlayfairDisplaySC-BlackItalic.otf') format('truetype'),
+                url('fonts/PlayfairDisplaySC-Bold.otf') format('truetype'),
+                url('fonts/PlayfairDisplaySC-BoldItalic.otf') format('truetype'),
+                url('fonts/PlayfairDisplaySC-Italic.otf') format('truetype'),
+                url('fonts/PlayfairDisplaySC-Regular.otf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        #check:checked~nav {
+            height: 220px;
+        }
+
+        #check:checked~label>span:nth-child(2) {
+            opacity: 0;
+        }
+        #check:checked~label>span:first-child {
+            transform: rotate(40deg) translateY(8px) translateX(6px);
+            width: 70%;
+        }
+        #check:checked~label>span:last-child {
+            transform: rotate(-40deg) translateY(-10px) translateX(6px);
+            width: 70%;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        @keyframes showhearder {
+            from {
+                opacity: 0;
+                transform: translateY(-100px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+
+        h1,
+        label {
+            font-family: "Archivo Black", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @keyframes showtext1 {
+            from {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+
+        @keyframes showprojects {
+            from {
+                opacity: 0;
+                scale: .9;
+            }
+
+            to {
+                opacity: 1;
+                scale: 1;
+            }
+        }
+    </style>
+
+    <header
+        class="w-full py-5 px-[30px] h-[100px] relative sticky top-0 z-50 flex justify-between transition-all  opacity-0 animate-[showhearder_1s_ease-in-out_forwards] items-center bg-neutral-900 shadow-xl shadow-black ">
+        <div class="flex justify-start items-center gap-5 max-xl:justify-between max-xl:w-full">
+            <div class="logo">
+                <a href="../index.html" class="text-white uppercase text-3xl font-black ">arman</a>
+            </div>
+            <input type="checkbox" id="check" class="hidden">
+            <label for="check"
+                class="w-[50px] h-[50px] bg-orange-500 hidden max-xl:flex flex justify-center flex-col items-center text-[30px] gap-2 text-white">
+                <span class="w-[60%] h-[3px] bg-white transition-all"></span>
+                <span class="w-[60%] h-[3px] bg-white transition-all"></span>
+                <span class="w-[60%] h-[3px] bg-white transition-all"></span>
+            </label>
+            <nav
+                class="max-xl:absolute max-xl:top-full max-xl:right-0 max-xl:bg-neutral-900 transition-all max-xl:w-[400px] max-md:w-full max-xl:shadow-xl max-xl:shadow-black max-xl:overflow-hidden max-xl:h-0">
+                <ul class="flex justify-content-center items-center gap-4 max-xl:flex-col">
+                    <li class="rounded-[30px] w-[150px] overflow-hidden"><a href="../pages/work.html"
+                            class=" block w-full text-center py-3 px-5 uppercase transition-all hover:bg-orange-500 text-white tracking-widest">work</a>
+                    </li>
+                    <li class="rounded-[30px] w-[150px] overflow-hidden"><a href="./service.html"
+                            class=" block w-full text-center py-3 px-5 uppercase transition-all hover:bg-orange-500 text-white tracking-widest">services
+                        </a></li>
+                    <li>
+                        <a href=""
+                            class="border-3 w-[230px] transition-all hidden max-xl:flex flex justify-between items-center gap-3 hover:bg-green-700 border-green-700 text-white p-[1px_10px_1px_1px] text-xl rounded-full"><i
+                                class="fa-solid fa-phone p-3 text-center rounded-full flex justify-center items-center bg-green-700"></i>
+                            +374 77 30 29 62</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <a href=""
+            class="border-3 w-[230px] transition-all flex justify-between items-center gap-3 hover:bg-green-700 border-green-700 text-white p-[1px_10px_1px_1px] text-[20px] rounded-full max-xl:hidden "><i
+                class="fa-solid fa-phone p-3 text-center rounded-full flex justify-center items-center bg-green-700"></i>
+            +374 77 30 29 62</a>
+    </header>
+
+    <h1
+        class="text-white opacity-0 drop-shadow-[5px_5px_0px_#585858] animate-[showtext1_1s_ease-in-out_forwards] max-xl:text-[90px] max-md:text-[70px] font-black  text-center text-[180px] uppercase ">
+        projects
+    </h1>
+
+    <div
+        class="animate-[showprojects_1s_ease-in-out_forwards] opacity-0 py-[50px] flex justify-start items-start flex-col gap-6">
+        <label class="text-white translate-x-[50px] drop-shadow-[5px_5px_0px_#585858] text-5xl">Websites</label>
+        <ul class="flex justify-center items-center flex-wrap gap-5">
+            <li
+                class="w-[450px] transition-all ease-linear hover:-translate-y-[10px] border-3 border-transparent hover:border-orange-500 aspect-[16/10] overflow-hidden rounded-xl shadow-2xl shadow-black">
+                <a class="block w-full h-full" href="https://adboard.am">
+                    <img class="w-full h-full object-cover" src="../assets/project21.png" alt="">
+                </a>
+            </li>
+            <li
+                class="w-[450px] transition-all ease-linear hover:-translate-y-[10px] border-3 border-transparent hover:border-orange-500 aspect-[16/10] overflow-hidden rounded-xl shadow-2xl shadow-black">
+                <a class="block w-full h-full" href="https://armanmnacakanov.github.io/cryptoweb/">
+                    <img class="w-full h-full object-cover" src="../assets/project1.png" alt="">
+                </a>
+            </li>
+            <li
+                class="w-[450px] transition-all ease-linear hover:-translate-y-[10px] border-3 border-transparent hover:border-orange-500 aspect-[16/10] overflow-hidden rounded-xl shadow-2xl shadow-black">
+                <a class="block w-full h-full" href="https://armanmnacakanov.github.io/hendon/">
+                    <img class="w-full h-full object-cover" src="../assets/project2.png" alt="">
+                </a>
+            </li>
+            <li
+                class="w-[450px] transition-all ease-linear hover:-translate-y-[10px] border-3 border-transparent hover:border-orange-500 aspect-[16/10] overflow-hidden rounded-xl shadow-2xl shadow-black">
+                <a class="block w-full h-full" href="https://armanmnacakanov.github.io/Valkivid/">
+                    <img class="w-full h-full object-cover" src="../assets/project3.png" alt="">
+                </a>
+            </li>
+            <li
+                class="w-[450px] transition-all ease-linear hover:-translate-y-[10px] border-3 border-transparent hover:border-orange-500 aspect-[16/10] overflow-hidden rounded-xl shadow-2xl shadow-black">
+                <a class="block w-full h-full" href="https://armanmnacakanov.github.io/online-shop/">
+                    <img class="w-full h-full object-cover" src="../assets/project4.png" alt="">
+                </a>
+            </li>
+            <li
+                class="w-[450px] transition-all ease-linear hover:-translate-y-[10px] border-3 border-transparent hover:border-orange-500 aspect-[16/10] overflow-hidden rounded-xl shadow-2xl shadow-black">
+                <a class="block w-full h-full" href="https://armanmnacakanov.github.io/Assassins_Creed/">
+                    <img class="w-full h-full object-cover" src="../assets/project5.png" alt="">
+                </a>
+            </li>
+            <li
+                class="w-[450px] transition-all ease-linear hover:-translate-y-[10px] border-3 border-transparent hover:border-orange-500 aspect-[16/10] overflow-hidden rounded-xl shadow-2xl shadow-black">
+                <a class="block w-full h-full" href=" https://armanmnacakanov.github.io/MasterPiese/">
+                    <img class="w-full h-full object-cover" src="../assets/project6.png" alt="">
+                </a>
+            </li>
+            <li
+                class="w-[450px] transition-all ease-linear hover:-translate-y-[10px] border-3 border-transparent hover:border-orange-500 aspect-[16/10] overflow-hidden rounded-xl shadow-2xl shadow-black">
+                <a class="block w-full h-full" href="https://armanmnacakanov.github.io/Watches/">
+                    <img class="w-full h-full object-cover" src="../assets/project7.png" alt="">
+                </a>
+            </li>
+            <li
+                class="w-[450px] transition-all ease-linear hover:-translate-y-[10px] border-3 border-transparent hover:border-orange-500 aspect-[16/10] overflow-hidden rounded-xl shadow-2xl shadow-black">
+                <a class="block w-full h-full" href="https://armanmnacakanov.github.io/Plants/">
+                    <img class="w-full h-full object-cover" src="../assets/project8.png" alt="">
+                </a>
+            </li>
+            <li
+                class="w-[450px] transition-all ease-linear hover:-translate-y-[10px] border-3 border-transparent hover:border-orange-500 aspect-[16/10] overflow-hidden rounded-xl shadow-2xl shadow-black">
+                <a class="block w-full h-full" href="https://armanmnacakanov.github.io/Travel/">
+                    <img class="w-full h-full object-cover" src="../assets/project9.png" alt="">
+                </a>
+            </li>
+            <li
+                class="w-[450px] transition-all ease-linear hover:-translate-y-[10px] border-3 border-transparent hover:border-orange-500 aspect-[16/10] overflow-hidden rounded-xl shadow-2xl shadow-black">
+                <a class="block w-full h-full" href="https://armanmnacakanov.github.io/Halloween/">
+                    <img class="w-full h-full object-cover" src="../assets/project10.png" alt="">
+                </a>
+            </li>
+            <li
+                class="w-[450px] transition-all ease-linear hover:-translate-y-[10px] border-3 border-transparent hover:border-orange-500 aspect-[16/10] overflow-hidden rounded-xl shadow-2xl shadow-black">
+                <a class="block w-full h-full" href="https://armanmnacakanov.github.io/Cars/">
+                    <img class="w-full h-full object-cover" src="../assets/project11.png" alt="">
+                </a>
+            </li>
+        </ul>
+        <label class="text-white translate-x-[50px] drop-shadow-[5px_5px_0px_#585858] text-5xl">Games</label>
+        <ul class="flex justify-center w-full items-center flex-wrap gap-5">
+            <li
+                class="w-[450px] transition-all ease-linear hover:-translate-y-[10px] border-3 border-transparent hover:border-orange-500 aspect-[16/10] overflow-hidden rounded-xl shadow-2xl shadow-black">
+                <a class="block w-full h-full" href="https://armanmnacakanov.github.io/Tic-Tac-Toe/">
+                    <img class="w-full h-full object-cover" src="../assets/project12.png" alt="">
+                </a>
+            </li>
+            <li
+                class="w-[450px] transition-all ease-linear hover:-translate-y-[10px] border-3 border-transparent hover:border-orange-500 aspect-[16/10] overflow-hidden rounded-xl shadow-2xl shadow-black">
+                <a class="block w-full h-full" href="https://armanmnacakanov.github.io/BLUM/">
+                    <img class="w-full h-full object-cover" src="../assets/project13.png" alt="">
+                </a>
+            </li>
+            <li
+                class="w-[450px] transition-all ease-linear hover:-translate-y-[10px] border-3 border-transparent hover:border-orange-500 aspect-[16/10] overflow-hidden rounded-xl shadow-2xl shadow-black">
+                <a class="block w-full h-full" href="https://armanmnacakanov.github.io/HAMSTER_COMBAT/">
+                    <img class="w-full h-full object-cover" src="../assets/project14.png" alt="">
+                </a>
+            </li>
+            <li
+                class="w-[450px] transition-all ease-linear hover:-translate-y-[10px] border-3 border-transparent hover:border-orange-500 aspect-[16/10] overflow-hidden rounded-xl shadow-2xl shadow-black">
+                <a class="block w-full h-full" href="https://armanmnacakanov.github.io/circle3D/">
+                    <img class="w-full h-full object-cover" src="../assets/project15.png" alt="">
+                </a>
+            </li>
+        </ul>
+        <label class="text-white translate-x-[50px] drop-shadow-[5px_5px_0px_#585858] text-5xl">Animations</label>
+        <ul class="flex justify-center w-full items-center flex-wrap gap-5">
+            <li
+                class="w-[450px] transition-all ease-linear hover:-translate-y-[10px] border-3 border-transparent hover:border-orange-500 aspect-[16/10] overflow-hidden rounded-xl shadow-2xl shadow-black">
+                <a class="block w-full h-full" href="https://armanmnacakanov.github.io/Gear/">
+                    <img class="w-full h-full object-cover" src="../assets/project16.png" alt="">
+                </a>
+            </li>
+            <li
+                class="w-[450px] transition-all ease-linear hover:-translate-y-[10px] border-3 border-transparent hover:border-orange-500 aspect-[16/10] overflow-hidden rounded-xl shadow-2xl shadow-black">
+                <a class="block w-full h-full" href="https://armanmnacakanov.github.io/Parallax/">
+                    <img class="w-full h-full object-cover" src="../assets/project17.png" alt="">
+                </a>
+            </li>
+            <li
+                class="w-[450px] transition-all ease-linear hover:-translate-y-[10px] border-3 border-transparent hover:border-orange-500 aspect-[16/10] overflow-hidden rounded-xl shadow-2xl shadow-black">
+                <a class="block w-full h-full" href="https://armanmnacakanov.github.io/robot/">
+                    <img class="w-full h-full object-cover" src="../assets/project18.png" alt="">
+                </a>
+            </li>
+            <li
+                class="w-[450px] transition-all ease-linear hover:-translate-y-[10px] border-3 border-transparent hover:border-orange-500 aspect-[16/10] overflow-hidden rounded-xl shadow-2xl shadow-black">
+                <a class="block w-full h-full" href="https://armanmnacakanov.github.io/Parallax-Slider/">
+                    <img class="w-full h-full object-cover" src="../assets/project19.png" alt="">
+                </a>
+            </li>
+        </ul>
+        <label class="text-white translate-x-[50px] drop-shadow-[5px_5px_0px_#585858] text-5xl">Phone in WEB</label>
+        <ul class="flex justify-center w-full items-center flex-wrap gap-5">
+            <li
+                class="w-[80%] transition-all ease-linear hover:-translate-y-[10px] border-3 border-transparent hover:border-orange-500 aspect-[16/7] overflow-hidden rounded-xl shadow-2xl shadow-black">
+                <a class="block w-full h-full" href="https://armanmnacakanov.github.io/Phone_in_WEB/">
+                    <img class="w-full h-full object-cover" src="../assets/project20.png" alt="">
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        const header = document.querySelector('header');
+
+        header.addEventListener('animationend', () => {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 0) {
+                    header.classList.remove('h-[100px]', 'transition-all');
+                    header.classList.add('h-[65px]', 'transition-all');
+                } else {
+                    header.classList.remove('h-[65px]', 'transition-all');
+                    header.classList.add('h-[100px]', 'transition-all');
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>
